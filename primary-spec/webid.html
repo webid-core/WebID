@@ -189,6 +189,11 @@
             [= Relationship between primary spec and Extension Profiles =] )
             while limited to a SHOULD to preserve backward compatibility
           </li>
+          <li>
+            Choice of `foaf` mainly driven by backward compatibility with
+            existing implementations and the fact that it is still under
+            active maintenance (see [= State of FOAF =]).
+          </li>
         </ul>
       </span>
       <h2>Content and format of Identity Documents</h2>
@@ -213,6 +218,7 @@
       <p>
         Content Negotiation MAY be used by clients and servers to agree on the
         serialization format to be used for any given exchange, if available.
+        Clients MUST NOT assume Content Negotiation to be available.
       </p>
       <aside class="example" title="Language to describe supported serialization formats">
         <p>
