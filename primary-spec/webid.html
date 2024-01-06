@@ -206,6 +206,14 @@
         [= Extension Profiles =] should be qualified according to which RDF
         formats they support.
       </p>
+      <p>
+        Identity Documents SHOULD be available in at least one format between
+        Turtle and JSON-LD, optionally embedded within HTML data islands.
+      </p>
+      <p>
+        Content Negotiation MAY be used by clients and servers to agree on the
+        serialization format to be used for any given exchange, if available.
+      </p>
       <aside class="example" title="Language to describe supported serialization formats">
         <p>
           A system capable of authenticating users via WebID-TLS and capable of
@@ -213,16 +221,12 @@
           is said to implement <em>WebID-TLS over Turtle and JSON-LD</em>.
         </p>
       </aside>      
-      <p>
-        Identity Documents SHOULD be available in at least one format between
-        Turtle and JSON-LD, optionally embedded within HTML data islands.
-      </p>
       <aside class="example" title="Identity document in a JSON-LD data island">
         <p>
           The following snippet of code exemplifies a minimal Identity Document
           as a JSON-LD data islands embedded within HTML.
         </p>
-        <pre>
+        <pre class="html">
           &lt;script type="application/ld+json"&gt;
             {
               "@context": {
