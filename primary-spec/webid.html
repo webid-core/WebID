@@ -193,20 +193,12 @@
       </span>
       <h2>Content and format of Identity Documents</h2>
       <p>
-        An Identity Document MUST adhere to the folow: should consist of at least the following
-        statements:
-        <ul>
-          <li>
-            MUST qualify the described [= Agent =] as the document's
-            `foaf:primaryTopic`
-          </li>
-          <li>
-            SHOULD qualify the descrived [= Agent =] as having type
-            `foaf:Agent`
-          </li>
-        </ul>
-        1. 
-          or the document's `schema:mainEntity`.
+        An Identity Document MUST qualify the described [= Agent =] as the
+        document's `foaf:primaryTopic`.
+      </p>
+      <p>
+        Furthermore, an Identity Document SHOULD also qualify the decribed
+        [= Agent =] as having type `foaf:Agent`.
       </p>
       <p>
         Identity Documents MUST be available in at least one RDF format.
@@ -220,11 +212,32 @@
           parsing [= Identity Document =]s serialized using the Turtle format
           is said to implement <em>WebID-TLS over Turtle and JSON-LD</em>.
         </p>
-      </aside>
+      </aside>      
       <p>
         Identity Documents SHOULD be available in at least one format between
         Turtle and JSON-LD, optionally embedded within HTML data islands.
       </p>
+      <aside class="example" title="Identity document in a JSON-LD data island">
+        <p>
+          The following snippet of code exemplifies a minimal Identity Document
+          as a JSON-LD data islands embedded within HTML.
+        </p>
+        <pre>
+          <script type="application/ld+json">
+            {
+              "@context": {
+                "foaf": "http://xmlns.com/foaf/0.1/"
+              },
+              "@id": "https://example.com/rose",
+              "foaf:primaryTopic": {
+                "@id": "https://example.com/rose#me",
+                "@type": "Agent",
+                "foaf:name": "Rose Anderson"
+              }
+            }
+            </script>
+        </pre>
+      </aside>
     </section>
     <section class="conformance">
       <span class="sidenote">
