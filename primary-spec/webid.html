@@ -93,8 +93,7 @@
         WebID aims to act as a succinct, adaptable framework, achieving
         universality and broad applicability without necessitating further
         modifications to the primary specification. To this end, WebID
-        encompasses an open-ended list of <del>sub-specifications</del>
-        [= Extension Profiles =].
+        encompasses an open-ended list of [= Extension Profiles =].
       </p>
     </section>
     <section>
@@ -175,19 +174,39 @@
           </li>
           <li>
             Relationship between the spec, serialization formats and extension
-            profiles touched upon in [= Subsets of the superset =]
+            profiles touched upon in [= Subsets of the superset =] and 
+            [= Relationship between primary spec and Extension Profiles =]
           </li>
           <li>
             Serialization formats were the primary topic that started the long
             discussion thread [= Required RDF serialization of WebID resource =]
           </li>
+          <li>
+            `foaf:Agent` introduced in support of the possibility of
+            implementing the primary spec without necessariy also implementing
+            one of the authentication-related Extension Profiles
+            (see Nathan's view in 
+            [= Relationship between primary spec and Extension Profiles =] )
+            while limited to a SHOULD to preserve backward compatibility
+          </li>
         </ul>
       </span>
       <h2>Content and format of Identity Documents</h2>
       <p>
-        An Identity Document should consist of at least one statement
-        identifying the described [= Agent =] as either the document's
-        `foaf:primaryTopic` or the document's `schema:mainEntity`.
+        An Identity Document MUST adhere to the folow: should consist of at least the following
+        statements:
+        <ul>
+          <li>
+            MUST qualify the described [= Agent =] as the document's
+            `foaf:primaryTopic`
+          </li>
+          <li>
+            SHOULD qualify the descrived [= Agent =] as having type
+            `foaf:Agent`
+          </li>
+        </ul>
+        1. 
+          or the document's `schema:mainEntity`.
       </p>
       <p>
         Identity Documents MUST be available in at least one RDF format.
@@ -373,6 +392,52 @@
           <a href="https://github.com/w3c/WebID/issues/3">
             https://github.com/w3c/WebID/issues/3
           </a>
+        </li>
+        <li>
+          <dfn>Relationship between primary spec and Extension Profiles</dfn>
+          <ul>
+            <li>
+              Wouter's question
+              <a href="https://github.com/w3c/WebID/issues/22#issuecomment-1879125805">
+                https://github.com/w3c/WebID/issues/22#issuecomment-1879125805
+              </a>
+            </li>
+            <li>
+              Wouter's view, share by Jacopo
+              <a href="https://github.com/w3c/WebID/issues/22#issuecomment-1879289294">
+                https://github.com/w3c/WebID/issues/22#issuecomment-1879289294
+              </a>
+            </li>
+            <li>
+              Nathan's view, likely shared by Sarven, Kingsley
+              <a href="https://github.com/w3c/WebID/issues/33#issue-2063107798">
+                https://github.com/w3c/WebID/issues/33#issue-2063107798
+              </a>
+            </li>
+            <li>
+              Jacopo's attempt at working out the main differences between Wouter's and Nathan's views
+              <a href="https://github.com/w3c/WebID/issues/33#issuecomment-1878882129">
+                https://github.com/w3c/WebID/issues/33#issuecomment-1878882129
+              </a>
+            </li>
+            <li>
+              Jacopo's elaboration on the merits of Nathan's view
+              <a href="https://github.com/w3c/WebID/issues/22#issuecomment-1879273069">
+                https://github.com/w3c/WebID/issues/22#issuecomment-1879273069
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <dfn>State of FOAF</dfn>
+          <ul>
+            <li>
+              Dan's statement
+              <a href="https://github.com/w3c/WebID/issues/22#issuecomment-1868114977">
+                https://github.com/w3c/WebID/issues/22#issuecomment-1868114977
+              </a>
+            </li>
+          </ul>
         </li>
       </ul>
     </section>
